@@ -4,7 +4,7 @@
   
   $("#address").text();
 
-  if(zipCode.length != 6){
+  if(zipCode.length == 0){
     alert("Postal code could be wrong!");
   }  
 
@@ -24,3 +24,7 @@ function workResults(result){
 function workError(error){
   $("#address").text(error);
 }
+
+$(document).ready(function() {
+  $("#linkGeo").click(getLocation);
+});
