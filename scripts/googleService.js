@@ -8,7 +8,7 @@
 
   this.getLocation = function(zipCode) {
 
-    var deferred = new Defer();
+    var deferred = $.Deferred();
     getDataLocation({ 'address': zipCode }).then(dCoordsSuccess, dError);
 
     function dCoordsSuccess(result){
@@ -29,11 +29,11 @@
       deferred.reject(error);
     }
 
-    return deferred.promise;
+    return deferred.promise();
   };
 
   function getDataLocation(params){
-    var deferred = new Defer();
+    var deferred = $.Deferred();
     var geocoder = new google.maps.Geocoder();
     geocoder.geocode(params, function(results, status){
       if (status == google.maps.GeocoderStatus.OK){
@@ -42,7 +42,7 @@
         deferred.reject(status);
       }
     });
-    return deferred.promise;
+    return deferred.promise();
   }
 
   function getCoods(results){

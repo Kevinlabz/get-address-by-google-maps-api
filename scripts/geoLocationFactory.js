@@ -9,7 +9,7 @@ function GeoLocationFactory(){
 
 	function getLocationByZipCode(zipCode){
 
-		var deferred = new Defer();
+		var deferred =  $.Deferred();
 		var google = new GoogleService();
 
 		google.getLocation(zipCode).then(dSuccess, dError);
@@ -56,7 +56,7 @@ function GeoLocationFactory(){
 			return addr;
 		}
 
-		return deferred.promise;
+		return deferred.promise();
 	}
 
 	return this;
