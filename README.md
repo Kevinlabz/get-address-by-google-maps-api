@@ -8,4 +8,4 @@
 
 
 ####Live demo
-http://joeloliveira.org/get-address
+http://joeloliveira.github.io/get-address
